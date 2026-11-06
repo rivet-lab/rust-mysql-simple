@@ -225,7 +225,8 @@
 //!             (see [`rustls::crypto::aws_lc_rs::DEFAULT_CIPHER_SUITES`] and
 //!             [`rustls::crypto::ring::DEFAULT_CIPHER_SUITES`])
 //!     *   `root_cert_path` - path to a certificate file (`PEM` or `DER`). `PEM` supports multiple
-//!         certificates in a file.
+//!         certificates in a file. With `native-tls` the file is the only trust anchor (the system
+//!         store is not consulted).
 //!     *   `danger_skip_domain_validation` - either `true` or `false`
 //!     *   `danger_accept_invalid_certs` - either `true` or `false`
 //!     *   `cert_chain_path` - (`rustls`-only) path to client's certificate chain (requires `priv_key_path`)

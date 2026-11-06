@@ -28,6 +28,7 @@ impl Stream {
 
         let mut builder = TlsConnector::builder();
         if let Some(root_cert_path) = ssl_opts.root_cert_path() {
+            builder.disable_built_in_roots(true);
             let mut root_cert_data = vec![];
             let mut root_cert_file = File::open(root_cert_path)?;
             root_cert_file.read_to_end(&mut root_cert_data)?;
